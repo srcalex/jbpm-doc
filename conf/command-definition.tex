@@ -1,2 +1,20 @@
 \newcommand{\download}[1]{\href{#1}{\includegraphics[width=16px]{image/icon/cloud}}}
 \newcommand\crule[1]{\textcolor{#1}{\rule{6pt}{6pt}}}
+
+\NewEnviron{hint}{
+	\begin{tikzpicture}
+	\node[box, hint] (m) {\begin{minipage}{0.95\textwidth}\BODY\end{minipage}};
+	\end{tikzpicture}
+}
+
+\NewEnviron{information}{
+	\begin{tikzpicture}
+	\node[box, info] (m) {\begin{minipage}{0.95\textwidth}\BODY\end{minipage}};
+	\end{tikzpicture}
+}
+
+\NewEnviron{warning}{
+	\begin{tikzpicture}
+	\node[box, warn] (m) {\begin{minipage}{0.95\textwidth}\BODY\end{minipage}};
+	\end{tikzpicture}
+}
