@@ -2,19 +2,43 @@
 \newcommand\crule[1]{\textcolor{#1}{\rule{6pt}{6pt}}}
 
 \NewEnviron{hint}{
-	\begin{tikzpicture}
-	\node[box, hint] (m) {\begin{minipage}{0.95\textwidth}\BODY\end{minipage}};
-	\end{tikzpicture}
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}
+		\node[box, hint] (m) {\begin{minipage}{0.925\textwidth}\BODY\end{minipage}};
+		\draw[hint border] (m.south west) -- (m.north west);
+		\end{tikzpicture}
+	\end{figure}
 }
 
 \NewEnviron{information}{
-	\begin{tikzpicture}
-	\node[box, info] (m) {\begin{minipage}{0.95\textwidth}\BODY\end{minipage}};
-	\end{tikzpicture}
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}
+		\node[box, info] (m) {\begin{minipage}{0.925\textwidth}\BODY\end{minipage}};
+		\draw[information border] (m.south west) -- (m.north west);
+		\end{tikzpicture}
+	\end{figure}
 }
 
 \NewEnviron{warning}{
-	\begin{tikzpicture}
-	\node[box, warn] (m) {\begin{minipage}{0.95\textwidth}\BODY\end{minipage}};
-	\end{tikzpicture}
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}
+		\node[box, warn] (m) {\begin{minipage}{0.925\textwidth}\BODY\end{minipage}};
+		\draw[warn border] (m.south west) -- (m.north west);
+		\end{tikzpicture}
+	\end{figure}
+}
+
+\newcommand{\defaultcommand}[1]{%
+	\lstinputlisting{#1}
+}
+
+\newcommand{\xmllisting}[2]{%
+	\lstinputlisting[language=xml2, caption={#2}]{#1.xml}
+}
+
+\newcommand{\javalisting}[2]{%
+	\lstinputlisting[language=java2, caption={#2}]{#1.java}
 }

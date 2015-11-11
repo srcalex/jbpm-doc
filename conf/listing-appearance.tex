@@ -10,14 +10,13 @@ literate=%
     {├}{{\textSFviii}}1
     {─}{{\textSFx}}1
     {└}{{\textSFii}}1,
-language=bash,
 basicstyle=\small\ttfamily,
 keywordstyle=\color{keyword-color},
 stringstyle=\color{string-color},
-commentstyle=\color{comment-color}\small\textit,
+commentstyle=\color{comment-color},
 numberstyle=\color{background-color}\tiny\bfseries,
 backgroundcolor=\color{background-color},
-rulecolor=\color{comment-color},
+rulecolor=\color{rule-color},
 numbers=left,
 columns=fixed,
 nolol=true,
@@ -33,19 +32,18 @@ frame=leftline,
 %showlines=false,
 }
 
-\newcommand{\script}[2]{%
-\lstinputlisting[caption={#2}]{#1}
+\lstdefinelanguage{xml2}{%
+	morestring=[s]{"}{"},
+	morecomment=[s]{<?}{?>},
+	morecomment=[s]{!--}{--},
+	commentstyle=\color{comment-color},
+	moredelim=[s][\color{black}]{>}{<},
+	moredelim=[s][\color{long-comment-color}]{\ }{=},
+	stringstyle=\color{string-color},
+	identifierstyle=\color{keyword-color}
 }
 
-\newcommand{\bashuser}[1]{%
-\lstinputlisting[rulecolor=\color{main-color}]{#1}
-}
-\newcommand{\bashroot}[1]{%
-\lstinputlisting[rulecolor=\color{comp-color}]{#1}
-}
-\newcommand{\editor}[2]{%
-	\lstinputlisting[numbers=none,frame=lines,framerule=1pt,rulecolor=\color{main-color},xleftmargin=5pt,caption={Inhalt: #2}]{#1}
-}
-\newcommand{\xml}[2]{%
-	\lstinputlisting[language=xml,numbers=none,frame=lines,framerule=1pt,rulecolor=\color{main-color},xleftmargin=5pt,caption={Inhalt: #2}]{#1}
+\lstdefinelanguage{java2}{%
+	language=java,
+	morecomment=[s][\color{long-comment-color}]{/**}{*/}
 }
