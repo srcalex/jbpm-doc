@@ -10,13 +10,13 @@ literate=%
     {├}{{\textSFviii}}1
     {─}{{\textSFx}}1
     {└}{{\textSFii}}1,
-basicstyle=\small\ttfamily,
-keywordstyle=\color{keyword-color},
-stringstyle=\color{string-color},
-commentstyle=\color{comment-color},
-numberstyle=\color{background-color}\tiny\bfseries,
-backgroundcolor=\color{background-color},
-rulecolor=\color{rule-color},
+basicstyle=\small\ttfamily\color{dark-color},
+keywordstyle=\color{main-color-01},
+stringstyle=\color{main-color-03},
+commentstyle=\color{main-color-02},
+numberstyle=\color{light-color}\tiny\bfseries,
+backgroundcolor=\color{light-color},
+rulecolor=\color{dark-color},
 numbers=left,
 columns=fixed,
 nolol=true,
@@ -27,23 +27,21 @@ numbersep=10pt,
 breaklines=true,
 keepspaces=true,
 showstringspaces=false,
-%columns=fullflexible,
+columns=fullflexible,
 frame=leftline,
 %showlines=false,
 }
 
-\lstdefinelanguage{xml2}{%
+\lstdefinelanguage{srcalex-xml}{%
 	morestring=[s]{"}{"},
 	morecomment=[s]{<?}{?>},
 	morecomment=[s]{!--}{--},
-	commentstyle=\color{comment-color},
-	moredelim=[s][\color{black}]{>}{<},
-	moredelim=[s][\color{long-comment-color}]{\ }{=},
-	stringstyle=\color{string-color},
-	identifierstyle=\color{keyword-color}
+	moredelim=[s]{>}{<},
+	moredelim=[s]{\ }{=},
+	identifierstyle=\color{main-color-01}
 }
 
-\lstdefinelanguage{java2}{%
+\lstdefinelanguage{srcalex-java}{%
 	language=java,
-	morecomment=[s][\color{long-comment-color}]{/**}{*/}
+	morecomment=[s][\color{java-comment-color}]{/**}{*/}
 }

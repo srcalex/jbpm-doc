@@ -1,44 +1,46 @@
-\newcommand{\download}[1]{\href{#1}{\includegraphics[width=16px]{image/icon/cloud}}}
+\newcommand{\download}[1]{\href{#1}{Download}}
 \newcommand\crule[1]{\textcolor{#1}{\rule{6pt}{6pt}}}
 
-\NewEnviron{hint}{
-	\begin{figure}[h]
+\newcommand{\extract}[1]{\extractaux#1...\extractaux}
+\def\extractaux#1#2#3#4\extractaux{%
+	\def\posone{#1}%
+	\def\postwo{#2}%
+	\def\posthree{#3}%
+}
+
+\NewEnviron{info}[1]{
+	\extract{#1}%
+	\begin{figure}[htp]
 		\centering
 		\begin{tikzpicture}
-		\node[box, hint] (m) {\begin{minipage}{0.925\textwidth}\BODY\end{minipage}};
-		\draw[hint border] (m.south west) -- (m.north west);
+		\node[box] (m) {%
+			\begin{minipage}{0.925\textwidth}
+			{\LARGE\bfseries\color{dark-color}Lorem Ipsum}\hfill
+			\ifnum\pdfstrcmp{\posone}{1}=0
+				\includegraphics[width=16px]{image/icon/file}
+			\fi
+			\ifnum\pdfstrcmp{\postwo}{1}=0
+				\includegraphics[width=16px]{image/icon/download}
+			\fi
+			\ifnum\pdfstrcmp{\posthree}{1}=0
+				\includegraphics[width=16px]{image/icon/bookmark}
+			\fi\\
+			\BODY
+			\end{minipage}
+		};
+		\draw[border] (m.south west) -- (m.north west);
 		\end{tikzpicture}
 	\end{figure}
 }
 
-\NewEnviron{information}{
-	\begin{figure}[h]
-		\centering
-		\begin{tikzpicture}
-		\node[box, info] (m) {\begin{minipage}{0.925\textwidth}\BODY\end{minipage}};
-		\draw[information border] (m.south west) -- (m.north west);
-		\end{tikzpicture}
-	\end{figure}
+\newcommand{\bashlisting}[1]{%
+	\lstinputlisting{#1}%
 }
 
-\NewEnviron{warning}{
-	\begin{figure}[h]
-		\centering
-		\begin{tikzpicture}
-		\node[box, warn] (m) {\begin{minipage}{0.925\textwidth}\BODY\end{minipage}};
-		\draw[warn border] (m.south west) -- (m.north west);
-		\end{tikzpicture}
-	\end{figure}
+\newcommand{\javalisting}[1]{%
+	\lstinputlisting[language=srcalex-java, caption={#1}]{listing/java/#1}%
 }
 
-\newcommand{\defaultcommand}[1]{%
-	\lstinputlisting{#1}
-}
-
-\newcommand{\xmllisting}[2]{%
-	\lstinputlisting[language=xml2, caption={#2}]{#1.xml}
-}
-
-\newcommand{\javalisting}[2]{%
-	\lstinputlisting[language=java2, caption={#2}]{#1.java}
+\newcommand{\xmllisting}[1]{%
+	\lstinputlisting[language=srcalex-xml, caption={#1}]{listing/xml/#1}%
 }
