@@ -1,7 +1,21 @@
-\newcommand{\download}[1]{\href{#1}{Download}}
-\newcommand\crule[1]{\textcolor{#1}{\rule{6pt}{6pt}}}
+%%%%%%%%%% ABBREVIATIONS %%%%%%%%%%
+\newcommand{\zb}{\mbox{z.\,B.}\xspace}
+\renewcommand{\star}{\,*}
 
+%%%%%%%%%% ICONS %%%%%%%%%%
+\newcommand{\iconpath}{image/icon}
+\newcommand{\icongab}{\hspace*{0.4em}}
+\newcommand{\bigiconsize}{1.5em}
+\newcommand{\normaliconsize}{1em}
+\newcommand{\fileicon}{\icongab\includegraphics[width=\bigiconsize]{\iconpath/file}}
+\newcommand{\downloadicon}{\icongab\includegraphics[width=\bigiconsize]{\iconpath/download}}
+\newcommand{\bookmarkicon}{\icongab\includegraphics[width=\bigiconsize]{\iconpath/bookmark}}
+\newcommand{\isselected}{\ding{51}}
+\newcommand{\isnotselected}{\ding{55}}
+
+%%%%%%%%%% INFORMATION BOX %%%%%%%%%%
 \newcommand{\extract}[1]{\extractaux#1...\extractaux}
+
 \def\extractaux#1#2#3#4\extractaux{%
 	\def\posone{#1}%
 	\def\postwo{#2}%
@@ -15,32 +29,39 @@
 		\begin{tikzpicture}
 		\node[box] (m) {%
 			\begin{minipage}{0.925\textwidth}
-			{\LARGE\bfseries\color{dark-color}Lorem Ipsum}\hfill
+			{\LARGE\bfseries\color{dark-color}Informationsbox}\hfill
 			\ifnum\pdfstrcmp{\posone}{1}=0
-				\includegraphics[width=16px]{image/icon/file}
+				\fileicon
 			\fi
 			\ifnum\pdfstrcmp{\postwo}{1}=0
-				\includegraphics[width=16px]{image/icon/download}
+				\downloadicon
 			\fi
 			\ifnum\pdfstrcmp{\posthree}{1}=0
-				\includegraphics[width=16px]{image/icon/bookmark}
-			\fi\\
+				\bookmarkicon
+			\fi\\[1em]
 			\BODY
 			\end{minipage}
 		};
 		\draw[border] (m.south west) -- (m.north west);
 		\end{tikzpicture}
-	\end{figure}
+	\end{figure}\\
+}
+
+%%%%%%%%%% ITEMIZE %%%%%%%%%%
+\newcommand{\darksqare}{{\textcolor{dark-color}{\rule{0.5em}{0.5em}}}}
+\renewcommand{\labelitemi}{\darksqare}
+
+%%%%%%%%%% LISTINGS %%%%%%%%%%
+\newcommand{\listing}[3]{%
+	\lstinputlisting[language=srcalex-#1, caption={#2}, label={lst:#3}]{listing/#1/#2}
+}
+\newcommand{\javalisting}[2]{%
+	\listing{java}{#1}{#2}%
+}
+\newcommand{\xmllisting}[2]{%
+	\listing{xml}{#1}{#2}%
 }
 
 \newcommand{\bashlisting}[1]{%
 	\lstinputlisting{#1}%
-}
-
-\newcommand{\javalisting}[1]{%
-	\lstinputlisting[language=srcalex-java, caption={#1}]{listing/java/#1}%
-}
-
-\newcommand{\xmllisting}[1]{%
-	\lstinputlisting[language=srcalex-xml, caption={#1}]{listing/xml/#1}%
 }

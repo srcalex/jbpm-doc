@@ -1,29 +1,17 @@
 \section{Vorbemerkungen}
-Die Nachfolgenden Erläuterungen beschreiben die Installation und Konfiguration einer Eclipse-Arbeitsumgebung für jBPM im Zusammenspiel mit einem Wildfly-Applicationsever und einer PostgreSQL-Datenbank.
-\subsection{Verwendete Syntax und Semantik}
-Für eine bessere Verwendung dieses Dokumentes -- und eventuellen Folgedokumenten -- wurde auf eine konsistente Nutzung typographischer Stilmittel geachtet. Die folgende Auflistung stellt eine Übersicht aller in diesem Dokument betroffenen Element dar.
+Die Nachfolgenden Erläuterungen beschreiben die Installation und Konfiguration einer Eclipse-Arbeitsumgebung für jBPM im Zusammenspiel mit einem Wildfly Application Sever und einer PostgreSQL-Datenbank.
 
-\begin{itemize}
-	\item Downloads werden als blaue Wolke mit einem weißen, nach unten zeigenden Pfeil dargestellt: \download{arg1}. Im Allgemeinen verbirgt sich dahinter ein Direktdownload bzw. der Link zu einer Download-Seite.
-	\item Quellcodebeispiele verfügen über eine gemeinsame Basis. Das Ursprungsformat des Beispiels wird durch eine differenzierte Farbwahl des linken Randes kenntlich gemacht. Im folgende werden die Ursprungsformate kurz genannt und die dazugehörige Randfarbe rechts daneben, in einem kleinen Quadrat dargestellt:
-\end{itemize}
-\subsection{Verwendete Programmversionen}
-Zur Anfertigung dieses Dokumentes wurden folgende Programmversionen verwendet:
-\begin{description}
-	\item[Eclipse] (4.5.1 \download{http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/mars/1/eclipse-jee-mars-1-win32-x86_64.zip}; Plugins: BPMN2 Modeler 1.2.1, Drools and jBPM 6.3.0)
-	\item[JavaJDK] (1.8.66 \download{http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jdk-8u66-windows-x64.exe}) 
-	\item[jBPM] (6.3.0 \download{http://sourceforge.net/projects/jbpm/files/jBPM\%206/jbpm-6.3.0.Final/})
-	\item[Maven] (3.3.3 \download{http://mirror.23media.de/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.zip})
-	\item[PostgreSQL] (9.4.5 \download{http://get.enterprisedb.com/postgresql/postgresql-9.4.5-1-windows-x64.exe}; JDBC-Driver: 9.4-1205)
-	\item[Wildfly] (9.0.2 \download{http://download.jboss.org/wildfly/9.0.2.Final/wildfly-9.0.2.Final.zip})
-\end{description}
-Bei einer Abweichung -- besonders bei älteren Versionen -- der oben genannten Programmversionen kann nicht für eine erfolgreiche Einrichtung garantiert werden.
+Für eine bessere Verwendung dieses Dokumentes -- und eventuellen Folgedokumenten -- wurde auf eine konsistente Nutzung typographischer Stilmittel geachtet, welche im folgenden kurz erläutert werden sollen.
 
-\begin{info}{11113}
-	Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Zusätzliche Informationen -- welche nicht zwingend für die Bearbeitung des aktuellen Kapitels, Abschnitts bzw. Unterabschnitts notwendig sind -- werden jeweils am Ende in einer separaten Informationsbox eingefügt. Der Inhalt kann sich dabei je nach Bedarf unterscheiden und wird über eine Variation verschiedener Symbole in der oberen, rechten Ecke der Informationsbox beschrieben. Besonders bei längeren Informationsboxen soll dies dem Leser helfen, den darin befindlichen Inhalt schnell zu überblicken und die freie Entscheidung über ein möglicherweise gewünschtes Lesen beschleunigen. Das Aussehen und eine Übersicht aller verwendeten Symbole sowie deren Bedeutung zeigt die unten zu sehende Informationsbox.
+\begin{info}{111}
+	Erläuterungen zur Bedeutung der Symbole:\\[1em]
+	\begin{tabular}{m{2em}m{0.88\textwidth}}
+	\bookmarkicon	& deutet an, dass die Informationsbox Verweise zu externen Quellen mit zusätzlichen Informationen zu diesem Thema beinhaltet. \\[0.5em] 
+	\downloadicon	& deutet an, dass die Informationsbox einen oder mehrere Verweise zu externen Download-Quellen beinhaltet. \\[0.5em]
+	\fileicon	& deutet an, dass die Informationsbox zusätzliche Erläuterungen zu dem im aktuellen Kapitel, Abschnitt oder Unterabschnitt beinhaltet.
+	\end{tabular}
 \end{info}
-
-Und nun der Text unter der Box. Werden die Zeilen noch richtig umgebrochen oder steht wieder alles auf einer Linie.
-
-\xmllisting{modules.xml}
-\javalisting{HelloWorld.java}
+Quellcode-Beispiele werden unabhängig von der verwendete Programmier- bzw. Script-Sprache einheitlich dargestellt. Beispielhaft soll dies im unten zu sehenden Listing \ref{lst:listing-example} dargestellt werden. 
+\javalisting{HelloWorld.java}{listing-example}
+Der Bezug im Text wird über die Zeilennummer vorgenommen, welche sich am linken Rand des Listings befinden und stets mit 1 beginnt. Bei Quellcode-Auszügen kann sich die Zeilennummer vom Original unterscheiden und der Inhalt bzw. die Einfügestelle muss entsprechend gesucht werden.
