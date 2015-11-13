@@ -1,14 +1,17 @@
 \section{Einrichtung der Eclipse-Arbeitsumgebung}
-Für die Einrichtung müssen zunächst grundlegende Vorbereitungen getroffen werden wie beispielsweise die Installation des JavaJDK, Eclipse, Maven sowie einer lokalen PostgreSQL-Datenbank.
-
-Die Installation und Einrichtung wird an dieser Stelle nicht beschrieb. Es wird davon ausgegangen, dass das Vorgehen diesbezüglich bekannt und abrufbereit ist. Sollten bereits ältere Programmversion installiert sein, wird an dieser Stelle empfohlen eine Versionsaktualisierung auf die oben genannten Programmversion durchzuführen.
+Im Folgenden wird davon ausgegangen, dass die Eclipse IDE (for Java EE Developers) in der oben genannten Programmversion installiert ist.
 
 \subsection{Installation empfohlener Eclipse Plugins}
-Wurden alle notwendigen Vorbereitungen getroffen kann mit der Installation des Eclipse-Plugins begonnen werden. Über den Menüpunkt \textsc{Help / Install New Software\ldots} öffnet sich ein Fenster zum hinzufügen neuer Software (z.\,B.\,Plugins).
+Die Installation zusätzliche Plugins in Eclipse erfolgt über den Menüpunkt \textsc{Help / Install New Software\ldots}. In dem sich nun öffnenden Fenster kann eine \textsc{Software Site} des zu installierenden Plugins angegeben werden. Diese wird in das Feld \textsc{Work with:} eingetragen und nach einem klick auf \textsc{Add\ldots} durch Angabe eines Namens dauerhaft zu den verfügbaren \textsc{Software Sites} der aktuellen Eclipse-Installation hinzugefügt. Gleichzeitig werden alle unter dieser \textsc{Software Site} verfügbaren Plugins im unteren Bereich des Fensters aufgelistet. Durch die Auswahl der benötigten Plugins und einem Klick auf \textsc{Next} können die ausgewählten Plugins installiert werden. Die nun erscheinende Lizenzvereinbarung ist mit einem Klick auf \textsc{Ok} zu bestätigen.
 
 \subsubsection{jBPM Plugin}
-Die Eclipse-Plugin-URL lautet: \url{http://downloads.jboss.org/jbpm/release/6.3.0.Final/updatesite/}
-Diese wird unter \textsc{Work with:} eingetragen und mit einem Klick auf \textsc{Add\ldots} bestätigt. Nach kurzem laden des Inhalts, werden im mittleren Bereich die zur Installation bereitstehenden Pakete angezeigt (siehe Abbildung \ref{fig:install-jbpm-package-list}).\footnote{Farblose Icons weisen auf bereits installierte Plugins hin.}
+Die für eine Installation des aktuellen jBPM-Plugins (6.3.0) benötigte URL lautet: \url{http://downloads.jboss.org/jbpm/release/6.3.0.Final/updatesite/}. Für die weiteren Erläuterungen ist eine vollständige Installation aller von der oben genannten \textsc{Software Site} bereitgestellten Plugins nicht erforderlich. Zu den benötigten Plugins zählen:
+\begin{itemize}\renewcommand{\labelitemi}{\itemizecheck}
+	\item JBoss Drools Core
+	\item JBoss Drools/jBPM Common
+	\item JBoss jBPM Core
+\end{itemize}
+Nach kurzem laden des Inhalts, werden im mittleren Bereich die zur Installation bereitstehenden Pakete angezeigt (siehe Abbildung \ref{fig:install-jbpm-package-list}).\footnote{Farblose Icons weisen auf bereits installierte Plugins hin.}
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=\textwidth]{image/screenshots/install-jbpm-plugin}
