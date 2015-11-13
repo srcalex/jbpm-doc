@@ -4,16 +4,24 @@ Im Folgenden wird davon ausgegangen, dass die Eclipse IDE (for Java EE Developer
 \subsection{Installation empfohlener Eclipse Plugins}
 Die Installation zusätzliche Plugins in Eclipse erfolgt über den Menüpunkt \textsc{Help / Install New Software\ldots}. In dem sich nun öffnenden Fenster kann eine \textsc{Software Site} des zu installierenden Plugins angegeben werden. Diese wird in das Feld \textsc{Work with:} eingetragen und nach einem klick auf \textsc{Add\ldots} durch Angabe eines Namens dauerhaft zu den verfügbaren \textsc{Software Sites} der aktuellen Eclipse-Installation hinzugefügt. Gleichzeitig werden alle unter dieser \textsc{Software Site} verfügbaren Plugins im unteren Bereich des Fensters aufgelistet. Durch die Auswahl der benötigten Plugins und einem Klick auf \textsc{Next} können die ausgewählten Plugins installiert werden. Die nun erscheinende Lizenzvereinbarung ist mit einem Klick auf \textsc{Ok} zu bestätigen.
 
-\subsubsection{jBPM Plugin}
-Die für eine Installation des aktuellen jBPM-Plugins (6.3.0) benötigte URL lautet: \url{http://downloads.jboss.org/jbpm/release/6.3.0.Final/updatesite/}. Für die weiteren Erläuterungen ist eine vollständige Installation aller von der oben genannten \textsc{Software Site} bereitgestellten Plugins nicht erforderlich. Zu den benötigten Plugins zählen:
+\subsubsection{BPMN2 Modeler}
+Der BPMN2 Modeler ist unter \url{http://download.eclipse.org/bpmn2-modeler/updates/mars/1.2.1/} zu finden. Für die Nutzung des BPMN2 Modelers in Verbindung mit jBPM ist folgendes Plugin zu installieren:
 \begin{itemize}\renewcommand{\labelitemi}{\itemizecheck}
-	\item JBoss Drools Core
-	\item JBoss Drools/jBPM Common
+	\item BPMN2 Modeler - jBPM Runtime Extention Features
+\end{itemize}
+Nach der Installation ist es möglich {\ttfamily.bpmn} und {\ttfamily.bpmn2} Dateien mit dem BPMN2 Modele Editor bzw. BPMN2 Diagram Editor zu öffnen.
+
+\subsubsection{JBoss jBPM}
+Die für eine Installation von JBoss jBPM benötigte \textsc{Software Site} lautet: \url{http://downloads.jboss.org/jbpm/release/6.3.0.Final/updatesite/}. Für die weiteren Erläuterungen ist lediglich die Installation eines folgenden Plugins notwendig:
+\begin{itemize}\renewcommand{\labelitemi}{\itemizecheck}
 	\item JBoss jBPM Core
 \end{itemize}
+Im Anschluss kann unter dem Menüpunkt \textsc{Window / Preferences} im sich nun öffnenden Fester, der Eintrag \textsc{jBPM / Installed jBPM Runtime} ausgewählt und der Speicherort für die jBPM-Runtime angegeben werden.
 
-\subsubsection{BPMN2 Modeler Plugin}
-Brauche ich davor etwas Text? Ja! Hier muss also noch etwas mehr Text stehen. Und hier steht wohl immer noch nicht genügend Text. Brauche ich davor etwas Text? Ja! Hier muss also noch etwas mehr Text stehen. Und hier steht wohl immer noch nicht genügend Text. Brauche ich davor etwas Text? Ja! Hier muss also noch etwas mehr Text stehen. Und hier steht wohl immer noch nicht genügend Text.
+\subsection{JBoss Tools}
+JBoss Tools stellt eine Sammlung verschiedene Plugins zur Verfügung, beispielsweise um in Eclipse einen installierten Wildfly Application Server zu steuern. Die \textsc{Software Site} lautet: \url{http://download.jboss.org/jbosstools/mars/stable/updates/}. Das zu installierende Plugin kann unter dem Namen:
+\begin{itemize}\renewcommand{\labelitemi}{\itemizecheck}
+	\item JBoss AS, WildFly \& EAP Server Tools
+\end{itemize}
+über die Suche gefunden werden. Nach der Installation ist es unter anderem möglich den WildFly Application Server zu starten, zu stoppen oder Projekte direkt aus Eclipse heraus zu de- und unployen. Hierfür sind dem Plugin zunächst die bereitstehenden WildFly Application Server bekannt zumachen. Dies erfolgt über den Menüpunkt \textsc{Window / Preferences} unter dem Eintrag \textsc{JBoss Runtime Detection}. Unterhalb der hier angegebenen Verzeichnisse erfolgt eine automatische Suche nach bereits installierte WildFly Application Servern. Alle gefundenen WildFly Application Server stehen anschließend über die Server-View in Eclipse zur Verfügung. Zusätzliche Serverkonfigurationen können über \textsc{Window / Preferences} im Bereich Server hinzugefügt werden.
 
-
-\xmllisting{modules.xml}{lst:xml}
