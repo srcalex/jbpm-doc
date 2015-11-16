@@ -1,9 +1,9 @@
 <datasource jta="true" jndi-name="java:/PostgresDS" pool-name="PostgresDS" enabled="true" use-ccm="true">
-    <connection-url>jdbc:postgresql://localhost:5432/jbpm</connection-url>
+    <connection-url>jdbc:postgresql://localhost:5432/jbpm</connection-url> |\label{line:dbname}|
     <driver-class>org.postgresql.Driver</driver-class>
     <driver>postgresql</driver>
     <security>
-        <user-name>jbpmadmin</user-name>
+        <user-name>jbpmadmin</user-name> |\label{line:dbuser}|
         <password>0000</password>
     </security>
     <validation>
