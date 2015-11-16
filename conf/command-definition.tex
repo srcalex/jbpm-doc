@@ -65,5 +65,9 @@
 }
 
 \newcommand{\bashlisting}[1]{%
-	\lstinputlisting{#1}%
+	\lstinputlisting[language=srcalex-simple]{listing/#1}%
+}
+
+\newcommand{\lstref}[1]{%
+ \ref{lst:#1}%
 }
