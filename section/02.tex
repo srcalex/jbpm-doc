@@ -4,9 +4,13 @@ Für die Nutzung des WildFly Application Servers in Verbindung mit jBPM und dem 
 \subsection{Installation des PostgeSQL Treiber Moduls}
 Für die dauerhafte Einbindung des PostgreSQL-JDBC-Treibers ist dieser als Modul einzubinden. Hierfür ist es notwendig unter \emph{\{WILDFLY.HOME\}/modules} ein neues Verzeichnis anzulegen. Die für den JDBC-Treiber benötigte Verzeichnisstruktur ist \emph{org/""postgresql/main}. In das Verzeichnis \emph{main} ist der heruntergeladene PostgreSQL-JDBC-Treiber zu kopieren und die Datei \emph{module.xml} nach Listing \lstref{postgresql-module} anzulegen. Nun ist der WildFly Application Server zu starten.
 \xmllisting{module.xml}{postgresql-module}
-Im Anschluss muss der JDBC-Treiber über die CLI-Schnittstelle aktiviert werden. Hierfür wechselt man in das Verzeichnis \emph{\{WILDFLY.HOME\}/bin} und führt das jboss-cli-Script\footnote{In Abhängigkeit vom verwendeten Betriebssystem ist entsprechend ein BAT-Script (Windows) bzw. SH-Script (Linux) auszuführen.} aus.
-Nach der Eingabe von {\ttfamily connect} und dem Verbindungsaufbau zum Server, wird folgende Zeile in die Konsole eingetragen: \bashlisting{consol/cli-add-module}
+Im Anschluss muss der JDBC-Treiber über die CLI-Schnittstelle aktiviert werden. Im Verzeichnis \emph{\{WILDFLY.HOME\}/bin} ist das jboss-cli-Script\footnote{In Abhängigkeit vom verwendeten Betriebssystem ist entsprechend das BAT-Script (Windows) bzw. SH-Script (Linux) auszuwählen.} auszuführen.
+Die Eingabe von {\ttfamily connect} stellt die Verbindung zum Server her. Nach erfolgreichem Verbindungsaufbau wird dem JDBC-Treiber der neu installierte Treiber bekanntgegeben: \bashlisting{console/cli-add-module}
 In der CLI-Konsole wird die Ausführung mit {\ttfamily "{}outcome"{} => "{}success"{}} bestätigt. Der WildFly Application Server berichtet in der Konsole, das er ein {\ttfamily Deploying} des JDBC-Treiber durchführt und bestätigt nach dessen Ende den Start des neuen Services.
+
+Nachdem der JDBC-Treiber erfolgreich als \textsc{Core Module} eingebunden wurde, kann die Datenbankverbindung konfiguriert werden.
+\xmllisting{postgresql-datasource.xml}{postgresql-datasource}
+Als Datenbankname wurde in Listing \ref{lst:postgresql-datasource} (Zeile 2) \textbf{jdbc} und als Datenbankadministrator (Zeile 6) \textbf{jbpmadmin} gewählt.
 \begin{info}{100}
 	Die Verzeichnisstruktur wird aus dem heruntergeladenen JDBC-Treiber abgeleitet. Diesbezüglich ist der JDBC-Treiber mit einem Packprogramm zu öffnen und die Verzeichnisstruktur bis zum Verzeichnis mit den ersten Klassen unter \textsc{modules} anzulegen.
 \end{info}
