@@ -11,6 +11,3 @@ In der CLI-Konsole wird die Ausführung mit {\ttfamily "{}outcome"{} => "{}succe
 Nachdem der JDBC-Treiber erfolgreich als \textsc{Core Module} eingebunden wurde, kann die Datenbankverbindung wie in Listing \ref{lst:postgresql-datasource} auf Seite \pageref{lst:postgresql-datasource} konfiguriert werden.
 \xmllisting{postgresql-datasource.xml}{postgresql-datasource}
 Als Datenbankname wurde \textbf{jbpm} (Zeile \ref{line:dbname}) und als Datenbankeigentümer \textbf{jbpmadmin} (Zeile \ref{line:dbuser}) gewählt. Der Inhalt ist der \emph{standalone-full.xml} unter \textsc{server / profile / subsystem / datasources} als neues \textsc{Datasource}-Elemet hinzuzufügen.
-\begin{info}{100}
-	Die Verzeichnisstruktur wird aus dem heruntergeladenen JDBC-Treiber abgeleitet. Diesbezüglich ist der JDBC-Treiber mit einem Packprogramm zu öffnen und die Verzeichnisstruktur bis zum Verzeichnis mit den ersten Klassen unter \textsc{modules} anzulegen.
-\end{info}
