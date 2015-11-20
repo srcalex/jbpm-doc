@@ -16,7 +16,7 @@ Die für eine Installation von JBoss jBPM benötigte \textsc{Software Site} laut
 \begin{itemize}\renewcommand{\labelitemi}{\itemizecheck}
 	\item JBoss jBPM Core
 \end{itemize}
-Im Anschluss kann unter dem Menüpunkt \textsc{Window / Preferences} im sich nun öffnenden Fester, der Eintrag \textsc{jBPM / Installed jBPM Runtime} ausgewählt und der Speicherort für die jBPM-Runtime angegeben werden.
+Im Anschluss kann unter dem Menüpunkt \textsc{Window / Preferences} im sich nun öffnenden Fester, der Eintrag \textsc{jBPM / Installed jBPM Runtime} ausgewählt und der Speicherort für die jBPM-Runtime angegeben werden. Diese Schritt ist optional (siehe Informationsbox).
 
 \subsection{JBoss Tools}
 JBoss Tools stellt eine Sammlung verschiedene Plugins zur Verfügung, beispielsweise um in Eclipse einen installierten Wildfly Application Server zu steuern. Die \textsc{Software Site} lautet: \url{http://download.jboss.org/jbosstools/mars/stable/updates/}. Das zu installierende Plugin kann unter dem Namen:
@@ -24,4 +24,6 @@ JBoss Tools stellt eine Sammlung verschiedene Plugins zur Verfügung, beispielsw
 	\item JBoss AS, WildFly \& EAP Server Tools
 \end{itemize}
 über die Suche gefunden werden. Nach der Installation ist es unter anderem möglich den WildFly Application Server zu starten, zu stoppen oder Projekte direkt aus Eclipse heraus zu de- und unployen. Hierfür sind dem Plugin zunächst die bereitstehenden WildFly Application Server bekannt zumachen. Dies erfolgt über den Menüpunkt \textsc{Window / Preferences} unter dem Eintrag \textsc{JBoss Runtime Detection}. Unterhalb der hier angegebenen Verzeichnisse erfolgt eine automatische Suche nach bereits installierte WildFly Application Servern. Alle gefundenen WildFly Application Server stehen anschließend über die Server-View in Eclipse zur Verfügung. Zusätzliche Serverkonfigurationen können über \textsc{Window / Preferences} im Bereich Server hinzugefügt werden.
-
+\begin{info}{100}
+	Das setzen der \textsc{jBPM Runtime} ist nur notwendig, wenn jBPM-Projekte ohne Maven erzeugt werden. Nach dem Setzen der \textsc{jBPM Runtime} wird diese automatisch während der Erstellung eines neuen jBPM-Projekts hinzugefügt.
+\end{info}
