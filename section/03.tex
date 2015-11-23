@@ -1,2 +1,19 @@
 \section{Prozessentwicklung mit Eclipse}
-\subsection{title}
+\subsection{Projekterzeugung}
+Nach der Installation des jBPM-Eclipse-Plugins ist es möglich über \textsc{File / New / Other\ldots / jBPM} ein neues jBPM-Projekt zu erzeugen. Abhängig von der Verwendung des Maven-Build-Tools sind hierbei zwei Dinge zu beachten.
+\begin{description}
+	\item[Mit Maven]  muss die \texttt{pom.xml} um den Inhalt aus Listing \ref{lst:jbpm-maven-dependencies} ergänzt werden.
+	\item[ohne Maven] muss wie unter \ldots beschrieben die \textsc{jBPM Runtime} eingerichtet sein oder manuell hinzugefügt werden.
+\end{description}
+\xmllisting{jbpm-maven-dependencies.xml}{jbpm-maven-dependencies}
+
+\subsection{Anlegen eines jBPM-Prozesses}
+Ein neuer jBPM-Prozess kann über \textsc{File / New / Other\ldots / BPMN2 / jBPMN Process Diagram} erstellt werden. Als Resultat wir eine neue BPMN2-Datei erzeugt (\zb\texttt{example-process.bpmn2}).
+
+\subsection{Importieren eines jBPM-Projektes aus der KIE-Workbench}
+Die URI des Git-Repositories kann der KIE-Workbench unter \textsc{Authoring / Administration} entnommen werden. Der Aufbaue entspricht stets:
+\bashlisting{other/git-repository-syntax}
+Nach dem Hinzufügen des neuen Git-Repositorys kann der geclonete Inhalt über \textsc{File / Import\ldots / Maven / Existing Maven Projects} und einen Klick auf \textsc{Next >} in Eclipse importiert werden. Durch einen Klick \textsc{Browse\ldots} kann der Speicherort des geloneten Repositories definiert werden. Alle darin befindlichen Projekte werden unter \textsc{Projects} angezeigt und können durch Abwahl vom Import ausgeschlossen werden. Ein Klick auf \textsc{Finish} importiert die ausgewählten Projekte in Eclipse.
+\begin{info}{100}
+ Bei den in der Demo mitgelieferten Beispiel ist für eine erfolgreiche Verwendung zunächst noch die \texttt{pom.xml}, um den Eintrag aus Listing \ref{lst:jbpm-maven-dependencies} zu ergänzen.
+\end{info}
